@@ -34,20 +34,20 @@ function activate(context) {
       }
 
       function scaffoldProject(projectName) {
-        createDirectory(path.join(__dirname, projectName))
+        createDirectory(path.join('', projectName))
           .then(() => {
-            return createDirectory(path.join(__dirname, projectName, "sass"));
+            return createDirectory(path.join('', projectName, "sass"));
           })
           // base folder
           .then(() => {
             return createDirectory(
-              path.join(__dirname, projectName, "sass", "base")
+              path.join('', projectName, "sass", "base")
             );
           })
           //   base
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "base", "_base.scss"),
+              path.join('', projectName, "sass", "base", "_base.scss"),
               `body {
             background-color : var(--clr-neutral-200);
             font-family: var(--ff-primary);
@@ -60,7 +60,7 @@ function activate(context) {
           // reset
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "base", "_reset.scss"),
+              path.join('', projectName, "sass", "base", "_reset.scss"),
               `/* Box sizing rules */
         *,
         *::before,
@@ -136,7 +136,7 @@ function activate(context) {
           // root
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "base", "_root.scss"),
+              path.join('', projectName, "sass", "base", "_root.scss"),
               `@use "../abstracts/" as *;
 
         :root {
@@ -165,7 +165,7 @@ function activate(context) {
           // index
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "base", "_index.scss"),
+              path.join('', projectName, "sass", "base", "_index.scss"),
               `@forward "root";
 @forward "reset";
 @forward "base";`
@@ -174,14 +174,14 @@ function activate(context) {
           //   abstracts folder
           .then(() => {
             return createDirectory(
-              path.join(__dirname, projectName, "sass", "abstracts")
+              path.join('', projectName, "sass", "abstracts")
             );
           })
           //   colors
           .then(() => {
             return createFile(
               path.join(
-                __dirname,
+                '',
                 projectName,
                 "sass",
                 "abstracts",
@@ -209,7 +209,7 @@ function activate(context) {
           .then(() => {
             return createFile(
               path.join(
-                __dirname,
+                '',
                 projectName,
                 "sass",
                 "abstracts",
@@ -238,7 +238,7 @@ function activate(context) {
           .then(() => {
             return createFile(
               path.join(
-                __dirname,
+                '',
                 projectName,
                 "sass",
                 "abstracts",
@@ -251,27 +251,27 @@ function activate(context) {
           // pages folder
           .then(() => {
             return createDirectory(
-              path.join(__dirname, projectName, "sass", "pages")
+              path.join('', projectName, "sass", "pages")
             );
           })
           // index
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "pages", "_index.scss"),
+              path.join('', projectName, "sass", "pages", "_index.scss"),
               ""
             );
           })
           // components folder
           .then(() => {
             return createDirectory(
-              path.join(__dirname, projectName, "sass", "components")
+              path.join('', projectName, "sass", "components")
             );
           })
           // index
           .then(() => {
             return createFile(
               path.join(
-                __dirname,
+                '',
                 projectName,
                 "sass",
                 "components",
@@ -284,7 +284,7 @@ function activate(context) {
           // styles
           .then(() => {
             return createFile(
-              path.join(__dirname, projectName, "sass", "style.scss"),
+              path.join('', projectName, "sass", "style.scss"),
               `@use "base";
           @use "pages";
           @use "components";`
@@ -293,7 +293,7 @@ function activate(context) {
           .then(() => {
             vscode.window.showInformationMessage(
               `Project ${projectName} was successfully scaffolded at ${path.join(
-                __dirname,
+                '',
                 projectName
               )}`
             );
