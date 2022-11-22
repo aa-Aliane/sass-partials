@@ -1,6 +1,7 @@
 {
   "name": "sass-partials",
   "displayName": "sass-partials",
+  "publisher": "leolio29",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,14 +11,16 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:sass-partials.helloWorld"
+    "onCommand:sass-partials.sass-partials"
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "sass-partials.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "sass-partials.sass-partials",
+        "title": "sass-partials"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -34,5 +37,9 @@
     "mocha": "^10.1.0",
     "typescript": "^4.8.4",
     "@vscode/test-electron": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aa-Aliane/sass-partials.git"
   }
 }

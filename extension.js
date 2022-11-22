@@ -19,7 +19,7 @@ function activate(context) {
   // The commandId parameter must match the command field in package.json
 
   let disposable = vscode.commands.registerCommand(
-    "sass-partials.helloWorld",
+    "sass-partials.sass-partials",
     function () {
       const fs = require("fs");
       const path = require("path");
@@ -307,10 +307,10 @@ function activate(context) {
       // Replace 'test-project' with user input
 
       if (vscode.workspace.workspaceFolders !== undefined) {
-        let wf = vscode.workspace.workspaceFolders[0].uri.path;
+        let wf = vscode.workspace.workspaceFolders[0].uri.fsPath;
 
         let path_ = `${wf}`;
-
+    
         scaffoldProject(path_ + "/styles");
       } else {
         let message =
